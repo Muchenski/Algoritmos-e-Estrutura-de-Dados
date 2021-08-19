@@ -4,7 +4,7 @@ import java.util.List;
 
 import Algoritmos.entidades.Produto;
 
-public class Program {
+public class SelectionSort {
 
 	public static void main(String[] args) {
 
@@ -17,22 +17,7 @@ public class Program {
 
 		Produto[] produtos = { p1, p2, p3, p4, p5, p6 };
 
-		List.of(insertionSort(produtos.length, produtos)).forEach(System.out::println);
-		System.out.println();
 		List.of(selectionSort(produtos.length, produtos)).forEach(System.out::println);
-	}
-
-	public static Produto[] insertionSort(int quantidadeDeElementos, Produto... produtos) {
-		for (int indiceAtual = 1; indiceAtual < quantidadeDeElementos; indiceAtual++) {
-			int indiceDeAnalise = indiceAtual;
-			Produto produtoAtual = produtos[indiceDeAnalise];
-			while (indiceDeAnalise > 0 && produtoAtual.getValor() < produtos[indiceDeAnalise - 1].getValor()) {
-				produtos[indiceDeAnalise] = produtos[indiceDeAnalise - 1];
-				indiceDeAnalise--;
-			}
-			produtos[indiceDeAnalise] = produtoAtual;
-		}
-		return produtos;
 	}
 
 	public static Produto[] selectionSort(int quantidadeDeElementos, Produto... produtos) {
